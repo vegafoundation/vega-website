@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VEGA Foundation Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script defer src="app.js"></script>
+</head>
+<body>
+<div class="infinity-bg"></div>
+<div class="grid-overlay"></div>
+
+<header>
+  <div class="logo-container">
+    <div class="ae-symbol">Æ</div>
+    <span class="logo-text">VEGA<span class="dot">.</span>foundation</span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">Vision</a></li>
+      <li><a href="#vision-engines">Engines</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#agents">Agents</a></li>
+      <li><a href="#modules">Modules</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#whitepapers">Whitepapers</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#ecosystem">Ecosystem</a></li>
+      <li><a href="#admin">Admin</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <a href="/admin-login" class="login-btn">Login</a>
+  <div class="infinity-indicator">
+    <span class="loop-label">∞ LOOP</span>
+    <span id="loop-status" class="loop-status">INITIALIZING</span>
+  </div>
+</header>
+
+<main>
+  <section id="home" class="section hero">
+    <div class="infinity-loop-visual">
+      <div class="infinity-ring"></div>
+      <div class="infinity-ring"></div>
+      <div class="infinity-ring"></div>
+      <span class="infinity-symbol">∞</span>
+      <div class="phase-indicator">
+        <div class="phase-dot active" data-phase="3" title="Phase 3"></div>
+        <div class="phase-dot" data-phase="5" title="Phase 5"></div>
+        <div class="phase-dot" data-phase="8" title="Phase 8"></div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <div class="ae-monolith">
+        <div class="monolith-glow"></div>
+        <span class="ae-big">Æ</span>
+      </div>
+      <h1 class="hero-title">VEGA<span class="highlight">.foundation</span></h1>
+      <p class="hero-subtitle">INNOVATION IN EVERY PIXEL • RESONANCE IN EVERY CORE</p>
+      <p class="hero-tagline">Autonomous Meta-System • Chrome/Glass Architecture • Infinity Loop Active</p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="startInfinityLoop()">Activate System</button>
+        <a href="https://soundcloud.com/anlaetan" target="_blank" class="btn-secondary">
+          <span class="soundcloud-icon">♫</span> ANLÆTAN on SoundCloud
+        </a>
+      </div>
+      <div class="signature">ADAM EREN VEGA – Æ –</div>
+    </div>
+    <div class="hero-glass-panel">
+      <div class="panel-content">
+        <div class="core-mini" id="alpha-mini">
+          <span class="core-name">ALPHA</span>
+          <span class="core-power">0%</span>
+        </div>
+        <div class="core-mini" id="omega-mini">
+          <span class="core-name">OMEGA</span>
+          <span class="core-power">0%</span>
+        </div>
+        <div class="core-mini" id="vega-mini">
+          <span class="core-name">VEGA</span>
+          <span class="core-power">0%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section glass-section fade-in-section">
+    <div class="section-content">
+      <h2 class="section-title">Our Vision</h2>
+      <p class="section-intro">AE/Æ Agents, Infinity Loops, DALL·E Assets, Time Crystal – autonomous Meta-System.</p>
+      <div class="cores-status">
+        <div class="core-status-item glass-card-enhanced glow-hover" id="alpha-status">
+          <span class="core-label">Alpha Resonance:</span>
+          <span class="core-value">offline</span>
+        </div>
+        <div class="core-status-item glass-card-enhanced glow-hover" id="omega-status">
+          <span class="core-label">Omega Resonance:</span>
+          <span class="core-value">offline</span>
+        </div>
+        <div class="core-status-item glass-card-enhanced glow-hover" id="vega-status">
+          <span class="core-label">Vega Resonance:</span>
+          <span class="core-value">offline</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vision-engines" class="section fade-in-section">
+    <div class="section-content">
+      <h2 class="section-title">VEGA Engines</h2>
+      <p class="section-subtitle">Vision • Context • Storytelling Architecture</p>
+      <div class="version-display" id="engines-version">Version: Loading...</div>
+      
+      <div class="engines-grid" id="engines-container">
+        <div class="engine-card glass-card-enhanced glow-hover" id="vision-engine-card">
+          <div class="engine-header">
+            <span class="engine-icon">◈</span>
+            <h3 class="engine-name">VisionEngine</h3>
+            <span class="engine-status" id="vision-engine-status">●</span>
+          </div>
+          <p class="engine-description" id="vision-engine-desc">Loading...</p>
+          <div class="engine-modules" id="vision-engine-modules"></div>
+          <div class="engine-output" id="vision-engine-output"></div>
+        </div>
+        
+        <div class="engine-card glass-card-enhanced glow-hover" id="context-engine-card">
+          <div class="engine-header">
+            <span class="engine-icon">∞</span>
+            <h3 class="engine-name">ContextEngine</h3>
+            <span class="engine-status" id="context-engine-status">●</span>
+          </div>
+          <p class="engine-description" id="context-engine-desc">Loading...</p>
+          <div class="engine-features" id="context-engine-features"></div>
+        </div>
+        
+        <div class="engine-card glass-card-enhanced glow-hover" id="storytelling-engine-card">
+          <div class="engine-header">
+            <span class="engine-icon">✦</span>
+            <h3 class="engine-name">StorytellingEngine</h3>
+            <span class="engine-status" id="storytelling-engine-status">●</span>
+          </div>
+          <p class="engine-description" id="storytelling-engine-desc">Loading...</p>
+          <div class="engine-features" id="storytelling-engine-features"></div>
+        </div>
+      </div>
+      
+      <div class="resonanz-section">
+        <h3 class="resonanz-title">Resonanzräume</h3>
+        <div class="resonanz-nodes" id="resonanz-container">
+          <div class="resonanz-node" data-core="alpha">
+            <div class="node-ring"></div>
+            <span class="node-name">AlphaCore</span>
+            <span class="node-desc" id="alpha-core-desc">Loading...</span>
+          </div>
+          <div class="resonanz-connector"></div>
+          <div class="resonanz-node" data-core="omega">
+            <div class="node-ring"></div>
+            <span class="node-name">OmegaCore</span>
+            <span class="node-desc" id="omega-core-desc">Loading...</span>
+          </div>
+          <div class="resonanz-connector"></div>
+          <div class="resonanz-node" data-core="mirror">
+            <div class="node-ring"></div>
+            <span class="node-name">MirrorCore</span>
+            <span class="node-desc" id="mirror-core-desc">Loading...</span>
+          </div>
+          <div class="resonanz-connector"></div>
+          <div class="resonanz-node" data-core="ae">
+            <div class="node-ring"></div>
+            <span class="node-name">AE_Center</span>
+            <span class="node-desc" id="ae-center-desc">Loading...</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="neom-section">
+        <h3 class="neom-title">NEOM Vision</h3>
+        <div class="neom-indicators" id="neom-container">
+          <div class="neom-indicator" id="neom-sustainable">
+            <span class="indicator-dot"></span>
+            <span class="indicator-label">Sustainable Projects</span>
+          </div>
+          <div class="neom-indicator" id="neom-resonance">
+            <span class="indicator-dot"></span>
+            <span class="indicator-label">Resonance City</span>
+          </div>
+          <div class="neom-indicator" id="neom-ai">
+            <span class="indicator-dot"></span>
+            <span class="indicator-label">AI Integration</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="infinity-loop-section">
+        <h3 class="infinity-loop-title">Infinity Loop Processes</h3>
+        <div class="infinity-loop-container" id="infinity-loop-processes">
+          <div class="loop-iteration-badge">3-5-8 Cycle</div>
+          <div class="loop-processes" id="loop-processes-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section fade-in-section">
+    <div class="section-content">
+      <h2 class="section-title">Core Services</h2>
+      <p class="section-subtitle">Integrated intelligence solutions</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-icon">⚡</span>
+          <h3 class="service-title">AI Integration</h3>
+          <p class="service-description">Seamless integration of advanced AI models including GPT, Claude, and custom neural networks for intelligent automation.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🎵</span>
+          <h3 class="service-title">Soundscape Engine</h3>
+          <p class="service-description">Generative audio synthesis powered by ANLÆTAN algorithms. Create immersive soundscapes and adaptive music experiences.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🤖</span>
+          <h3 class="service-title">Autonomous Agents</h3>
+          <p class="service-description">Self-orchestrating intelligence modules that adapt, learn, and evolve. Deploy agents that work autonomously 24/7.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">💎</span>
+          <h3 class="service-title">Time Crystal Persistence</h3>
+          <p class="service-description">Quantum-inspired data persistence layer. Store and retrieve state across temporal boundaries with crystal-lattice memory.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="agents" class="section fade-in-section">
+    <div class="section-content">
+      <h2 class="section-title">Autonomous Agents</h2>
+      <p class="section-subtitle">Self-orchestrating intelligence modules</p>
+      <div class="agents-grid" id="agents-container"></div>
+    </div>
+  </section>
+
+  <section id="modules" class="section glass-section fade-in-section">
+    <div class="section-content">
+      <h2 class="section-title">VEGA Modules</h2>
+      <p class="section-subtitle">Integrated intelligence systems</p>
+      <div class="modules-grid" id="modules-container"></div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section fade-in-section">
+    <div class="section-content">
+      <h2 class="section-title">DALL·E Assets</h2>
+      <p class="section-subtitle">AI-generated visuals in VEGA/ANLÆTAN style</p>
+      <div class="portfolio-grid" id="portfolio-container"></div>
+    </div>
+  </section>
+
+  <section id="music" class="section glass-section fade-in-section">
+    <div class="section-content">
+      <div class="music-header">
+        <h2 class="music-title-main">ANLÆTAN</h2>
+        <h3 class="music-title-sub">Music</h3>
+        <p class="music-description">Sonic expressions from the VEGA collective</p>
+      </div>
+      
+      <div class="music-content-row">
+        <div class="music-icon-container">
+          <span class="music-icon">♪</span>
+        </div>
+        <div class="music-info">
+          <span class="music-platform-text">ANLÆTAN on SoundCloud</span>
+          <a href="https://soundcloud.com/anlaetan" target="_blank" class="music-listen-btn">
+            Listen Now <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="track-selector">
+        <label class="track-label">Select Release:</label>
+        <select id="track-select" class="track-dropdown" onchange="changeTrack(this.value)">
+          <option value="https://soundcloud.com/anlaetan">All Tracks</option>
+          <option value="https://on.soundcloud.com/6jJjWLB6lT8dTKB6bv">Hot Release</option>
+          <option value="https://on.soundcloud.com/yCcFjnJ7b4cuVZhout">Latest Drop</option>
+          <option value="https://on.soundcloud.com/Yx9IVioYW6y7vvyrFG">New Single</option>
+          <option value="https://on.soundcloud.com/v3PjykJ24uOOYZvP6o">Fresh Drop</option>
+          <option value="https://on.soundcloud.com/q3Kt981eRlqSq7KTm0">Newest Track</option>
+          <option value="https://on.soundcloud.com/A2orl8aqNsxZeBDYO6">New Release</option>
+          <option value="https://on.soundcloud.com/V7wh85uVza2nQWXANE">Latest Release</option>
+          <option value="https://soundcloud.com/anlaetan/sets/vega-sessions">VEGA Sessions</option>
+          <option value="https://soundcloud.com/anlaetan/sets/resonance-core">Resonance Core</option>
+          <option value="https://soundcloud.com/anlaetan/sets/infinity-loop">Infinity Loop</option>
+          <option value="https://soundcloud.com/anlaetan/sets/cosmic-drift">Cosmic Drift</option>
+        </select>
+      </div>
+
+      <div class="soundcloud-container">
+        <iframe id="soundcloud-player" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/anlaetan&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="whitepapers" class="section fade-in-section">
+    <div class="section-content">
+      <h2 class="section-title">Whitepaper Portal</h2>
+      <p class="section-subtitle">Documentation & Context</p>
+      <div class="whitepapers-grid" id="whitepapers-container"></div>
+    </div>
+  </section>
+
+  <section id="roadmap" class="section glass-section fade-in-section">
+    <div class="section-content">
+      <h2 class="section-title">Roadmap</h2>
+      <p class="section-subtitle">The Path Forward • 2024 - 2026</p>
+      
+      <div class="roadmap-timeline">
+        <div class="roadmap-phase completed">
+          <div class="phase-marker">
+            <span class="phase-icon">✓</span>
+          </div>
+          <div class="phase-content">
+            <h3 class="phase-title">Phase 1: Genesis</h3>
+            <span class="phase-date">Q4 2024</span>
+            <ul class="phase-items">
+              <li>Core Architecture Development</li>
+              <li>Chrome/Glass Design System</li>
+              <li>Infinity Loop (3-5-8) Implementation</li>
+              <li>AI Agent Framework</li>
+              <li>ANLÆTAN Music Integration</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="roadmap-phase active">
+          <div class="phase-marker">
+            <span class="phase-icon">◈</span>
+          </div>
+          <div class="phase-content">
+            <h3 class="phase-title">Phase 2: Resonance</h3>
+            <span class="phase-date">Q1 2025</span>
+            <ul class="phase-items">
+              <li>Perfect Orchestration System</li>
+              <li>Multi-AI Integration (Claude, Grok, DeepSeek)</li>
+              <li>Visual Soundscape Engine</li>
+              <li>Resonance Core Optimization</li>
+              <li>8D Visual Effects Layer</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="roadmap-phase upcoming">
+          <div class="phase-marker">
+            <span class="phase-icon">◇</span>
+          </div>
+          <div class="phase-content">
+            <h3 class="phase-title">Phase 3: Expansion</h3>
+            <span class="phase-date">Q2 2025</span>
+            <ul class="phase-items">
+              <li>Mobile App Development</li>
+              <li>VR/AR Experience Integration</li>
+              <li>Decentralized Agent Network</li>
+              <li>Community Token Launch</li>
+              <li>Global Partnership Program</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="roadmap-phase upcoming">
+          <div class="phase-marker">
+            <span class="phase-icon">∞</span>
+          </div>
+          <div class="phase-content">
+            <h3 class="phase-title">Phase 4: Infinity</h3>
+            <span class="phase-date">2026+</span>
+            <ul class="phase-items">
+              <li>Full Autonomous Operation</li>
+              <li>Cross-Chain Integration</li>
+              <li>Neural Network Evolution</li>
+              <li>Collective Intelligence Hub</li>
+              <li>VEGA DAO Governance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ecosystem" class="section fade-in-section">
+    <div class="section-content">
+      <h2 class="section-title">Ecosystem</h2>
+      <p class="section-subtitle">Powered by Advanced Technologies</p>
+      
+      <div class="ecosystem-grid">
+        <div class="ecosystem-category">
+          <h3 class="ecosystem-category-title">AI Partners</h3>
+          <div class="ecosystem-items">
+            <div class="ecosystem-item">
+              <span class="ecosystem-icon">◈</span>
+              <span class="ecosystem-name">OpenAI GPT-4</span>
+              <span class="ecosystem-desc">Primary Intelligence</span>
+            </div>
+            <div class="ecosystem-item">
+              <span class="ecosystem-icon">◈</span>
+              <span class="ecosystem-name">Anthropic Claude</span>
+              <span class="ecosystem-desc">Analysis Engine</span>
+            </div>
+            <div class="ecosystem-item">
+              <span class="ecosystem-icon">◈</span>
+              <span class="ecosystem-name">XAI Grok</span>
+              <span class="ecosystem-desc">Voice & Welcome</span>
+            </div>
+            <div class="ecosystem-item">
+              <span class="ecosystem-icon">◈</span>
+              <span class="ecosystem-name">DeepSeek</span>
+              <span class="ecosystem-desc">Code Generation</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ecosystem-category">
+          <h3 class="ecosystem-category-title">Creative Partners</h3>
+          <div class="ecosystem-items">
+            <div class="ecosystem-item">
+              <span class="ecosystem-icon">♫</span>
+              <span class="ecosystem-name">ANLÆTAN</span>
+              <span class="ecosystem-desc">Sound & Music</span>
+            </div>
+            <div class="ecosystem-item">
+              <span class="ecosystem-icon">♫</span>
+              <span class="ecosystem-name">SoundCloud</span>
+              <span class="ecosystem-desc">Distribution</span>
+            </div>
+            <div class="ecosystem-item">
+              <span class="ecosystem-icon">♫</span>
+              <span class="ecosystem-name">Suno AI</span>
+              <span class="ecosystem-desc">Music Generation</span>
+            </div>
+            <div class="ecosystem-item">
+              <span class="ecosystem-icon">✦</span>
+              <span class="ecosystem-name">DALL·E 3</span>
+              <span class="ecosystem-desc">Visual Assets</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ecosystem-category">
+          <h3 class="ecosystem-category-title">Infrastructure</h3>
+          <div class="ecosystem-items">
+            <div class="ecosystem-item">
+              <span class="ecosystem-icon">∞</span>
+              <span class="ecosystem-name">Replit</span>
+              <span class="ecosystem-desc">Development Platform</span>
+            </div>
+            <div class="ecosystem-item">
+              <span class="ecosystem-icon">∞</span>
+              <span class="ecosystem-name">Node.js</span>
+              <span class="ecosystem-desc">Backend Runtime</span>
+            </div>
+            <div class="ecosystem-item">
+              <span class="ecosystem-icon">∞</span>
+              <span class="ecosystem-name">Web Audio API</span>
+              <span class="ecosystem-desc">Soundscape Engine</span>
+            </div>
+            <div class="ecosystem-item">
+              <span class="ecosystem-icon">∞</span>
+              <span class="ecosystem-name">Canvas 2D</span>
+              <span class="ecosystem-desc">Visual Effects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ecosystem-signature">
+        <span class="sig-symbol">Æ</span>
+        <span class="sig-text">ADAM EREN VEGA</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="admin" class="section glass-section fade-in-section">
+    <div class="section-content">
+      <h2 class="section-title">Admin Panel</h2>
+      <p class="section-subtitle">System Configuration & API Management</p>
+      <div class="admin-panel">
+        <div class="admin-section">
+          <h3>Infinity Loop Control</h3>
+          <div class="admin-controls">
+            <button class="btn-admin" onclick="startInfinityLoop()">Start Loop</button>
+            <button class="btn-admin" onclick="iterateLoop()">Iterate</button>
+            <span class="iteration-display">Iteration: <span id="iteration-count">0</span></span>
+          </div>
+        </div>
+        <div class="admin-section">
+          <h3>API Status</h3>
+          <div class="api-status-grid">
+            <div class="api-item">
+              <span class="api-name">OpenAI</span>
+              <span class="api-indicator" id="openai-status">Ready</span>
+            </div>
+            <div class="api-item">
+              <span class="api-name">XAI Grok</span>
+              <span class="api-indicator" id="xai-status">Ready</span>
+            </div>
+            <div class="api-item">
+              <span class="api-name">Anthropic</span>
+              <span class="api-indicator" id="anthropic-status">Ready</span>
+            </div>
+            <div class="api-item">
+              <span class="api-name">DeepSeek</span>
+              <span class="api-indicator" id="deepseek-status">Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section fade-in-section">
+    <div class="section-content">
+      <h2 class="section-title">Connect</h2>
+      <p class="section-subtitle">Join the VEGA/ANLÆTAN ecosystem</p>
+      <div class="contact-info">
+        <a href="mailto:vegafoundation@proton.me" class="contact-link">
+          <span class="contact-icon">✉</span>
+          <span>vegafoundation@proton.me</span>
+        </a>
+        <a href="https://soundcloud.com/anlaetan" target="_blank" class="contact-link">
+          <span class="contact-icon">♫</span>
+          <span>soundcloud.com/anlaetan</span>
+        </a>
+        <a href="https://github.com/vegafoundation" target="_blank" class="contact-link">
+          <span class="contact-icon">◈</span>
+          <span>github.com/vegafoundation</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">
+      <span class="ae-symbol-small">Æ</span>
+      <span>VEGA.foundation</span>
+    </div>
+    <div class="footer-signature">
+      © 2025 VEGA.foundation – ADAM EREN VEGA – Æ –
+      <br>Open Source • Unique • Resonant
+    </div>
+  </div>
+</footer>
+
+<a href="https://soundcloud.com/anlaetan" target="_blank" class="floating-soundcloud" title="ANLÆTAN on SoundCloud">
+  <span class="sc-icon">♫</span>
+</a>
+
+<div id="audio-control-panel" class="audio-control-panel">
+  <div class="panel-tab" id="audio-panel-tab">
+    <span class="tab-icon">♫</span>
+    <span>AUDIO</span>
+  </div>
+  <div class="audio-panel-header">
+    <span class="audio-panel-title">AUDIO CONTROL CENTER</span>
+    <button id="audio-panel-toggle" class="audio-panel-minimize">−</button>
+  </div>
+  <div class="audio-panel-content" id="audio-panel-content">
+    <div class="audio-section">
+      <div class="audio-section-title">MASTER VOLUME</div>
+      <div class="audio-slider-row">
+        <span class="audio-slider-label">Master</span>
+        <input type="range" id="master-volume" class="audio-slider" min="0" max="100" value="35">
+        <span class="audio-slider-value" id="master-volume-value">35%</span>
+      </div>
+    </div>
+    
+    <div class="audio-section">
+      <div class="audio-section-title">SOUNDSCAPE PRESETS</div>
+      
+      <div class="soundscape-control">
+        <div class="soundscape-header">
+          <button class="soundscape-toggle" id="alpha-toggle" data-soundscape="alpha">
+            <span class="toggle-indicator"></span>
+          </button>
+          <span class="soundscape-name">Alpha Resonance</span>
+          <span class="soundscape-desc">63Hz, 126Hz</span>
+        </div>
+        <div class="audio-slider-row">
+          <input type="range" id="alpha-volume" class="audio-slider soundscape-slider" min="0" max="100" value="50">
+          <span class="audio-slider-value" id="alpha-volume-value">50%</span>
+        </div>
+      </div>
+
+      <div class="soundscape-control">
+        <div class="soundscape-header">
+          <button class="soundscape-toggle" id="omega-toggle" data-soundscape="omega">
+            <span class="toggle-indicator"></span>
+          </button>
+          <span class="soundscape-name">Omega Wave</span>
+          <span class="soundscape-desc">285Hz, 396Hz</span>
+        </div>
+        <div class="audio-slider-row">
+          <input type="range" id="omega-volume" class="audio-slider soundscape-slider" min="0" max="100" value="50">
+          <span class="audio-slider-value" id="omega-volume-value">50%</span>
+        </div>
+      </div>
+
+      <div class="soundscape-control">
+        <div class="soundscape-header">
+          <button class="soundscape-toggle" id="vega-toggle" data-soundscape="vega">
+            <span class="toggle-indicator"></span>
+          </button>
+          <span class="soundscape-name">Vega Crystal</span>
+          <span class="soundscape-desc">528Hz, 639Hz</span>
+        </div>
+        <div class="audio-slider-row">
+          <input type="range" id="vega-volume" class="audio-slider soundscape-slider" min="0" max="100" value="50">
+          <span class="audio-slider-value" id="vega-volume-value">50%</span>
+        </div>
+      </div>
+
+      <div class="soundscape-control">
+        <div class="soundscape-header">
+          <button class="soundscape-toggle" id="ambient-toggle" data-soundscape="ambient">
+            <span class="toggle-indicator"></span>
+          </button>
+          <span class="soundscape-name">Deep Ambient</span>
+          <span class="soundscape-desc">Sub-bass + Noise</span>
+        </div>
+        <div class="audio-slider-row">
+          <input type="range" id="ambient-volume" class="audio-slider soundscape-slider" min="0" max="100" value="50">
+          <span class="audio-slider-value" id="ambient-volume-value">50%</span>
+        </div>
+      </div>
+
+      <div class="soundscape-control">
+        <div class="soundscape-header">
+          <button class="soundscape-toggle" id="cosmic-toggle" data-soundscape="cosmic">
+            <span class="toggle-indicator"></span>
+          </button>
+          <span class="soundscape-name">Cosmic Flow</span>
+          <span class="soundscape-desc">All Frequencies</span>
+        </div>
+        <div class="audio-slider-row">
+          <input type="range" id="cosmic-volume" class="audio-slider soundscape-slider" min="0" max="100" value="50">
+          <span class="audio-slider-value" id="cosmic-volume-value">50%</span>
+        </div>
+      </div>
+
+      <div class="soundscape-control">
+        <div class="soundscape-header">
+          <button class="soundscape-toggle" id="neural-toggle" data-soundscape="neural">
+            <span class="toggle-indicator"></span>
+          </button>
+          <span class="soundscape-name">Neural Sync</span>
+          <span class="soundscape-desc">Binaural 10Hz</span>
+        </div>
+        <div class="audio-slider-row">
+          <input type="range" id="neural-volume" class="audio-slider soundscape-slider" min="0" max="100" value="50">
+          <span class="audio-slider-value" id="neural-volume-value">50%</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="audio-section">
+      <div class="audio-section-title">MUSIC VOLUME</div>
+      <div class="audio-slider-row">
+        <span class="audio-slider-label">SoundCloud</span>
+        <input type="range" id="soundcloud-volume" class="audio-slider music-slider" min="0" max="100" value="70">
+        <span class="audio-slider-value" id="soundcloud-volume-value">70%</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
