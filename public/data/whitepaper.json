@@ -1,0 +1,33 @@
+{
+  "title": "Vega Foundation Vision",
+  "version": "0.3",
+  "summary": "A modular blueprint for AI-driven narrative, context, and immersive audio with safety-first controls.",
+  "toc": [
+    { "id": "mission", "label": "Mission" },
+    { "id": "safety", "label": "Safety" },
+    { "id": "engines", "label": "Engines" },
+    { "id": "roadmap", "label": "Roadmap" }
+  ],
+  "sections": [
+    {
+      "id": "mission",
+      "heading": "Mission",
+      "content": "Build modular, immersive experiences that merge AI, sound, and story."
+    },
+    {
+      "id": "safety",
+      "heading": "Safety",
+      "content": "Keys and tokens are env-scoped. Configuration changes require admin tokens."
+    },
+    {
+      "id": "engines",
+      "heading": "Engines",
+      "content": "Vision, Context, Storytelling, and Soundscapes run as modular services with tokenized admin control and autosync pipelines."
+    },
+    {
+      "id": "roadmap",
+      "heading": "Roadmap",
+      "content": "Iterate fast with autosync hooks and live previews across Replit and GitHub."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "status": "cycling",
+  "loops": [
+    {
+      "id": "capture",
+      "label": "Capture",
+      "summary": "Monitor live site, heartbeat, and telemetry for drift.",
+      "checks": ["heartbeat ok", "asset integrity", "api reachability"],
+      "signal": "stable"
+    },
+    {
+      "id": "synthesize",
+      "label": "Synthesize",
+      "summary": "Blend whitepaper deltas, context traces, and manifest updates.",
+      "checks": ["whitepaper diff", "context packets", "module registry"],
+      "signal": "updating"
+    },
+    {
+      "id": "deploy",
+      "label": "Deploy",
+      "summary": "Promote artifacts to static mirror with compression + safeties.",
+      "checks": ["gzip pipeline", "token guards", "soundscape preload"],
+      "signal": "stable"
+    },
+    {
+      "id": "review",
+      "label": "Review",
+      "summary": "Validate UX, accessibility, and latency budgets per engine.",
+      "checks": ["latency budget", "keyboard navigation", "contrast"],
+      "signal": "watch"
+    }
+  ],
+  "telemetry": {
+    "latencyBudgetMs": 150,
+    "lastCycle": "2024-07-15T00:00:00.000Z",
+    "nextCycle": "2024-07-16T00:00:00.000Z"
+  }
+}

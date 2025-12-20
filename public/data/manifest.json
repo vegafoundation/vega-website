@@ -1,0 +1,22 @@
+{
+  "name": "Vega Foundation",
+  "description": "Static, modular mirror with engines, assets, and admin endpoints.",
+  "version": "0.3.0",
+  "modules": [
+    { "id": "vision", "name": "VisionEngine", "path": "/api/modules", "description": "Stores visions, goals, and concepts with versioning." },
+    { "id": "context", "name": "ContextEngine", "path": "/api/modules", "description": "Tracks narrative context, visitors, and sequencing." },
+    { "id": "story", "name": "StorytellingEngine", "path": "/api/modules", "description": "Assembles modular storylines and CTA microcopy." },
+    { "id": "infinity", "name": "Infinity Loop", "path": "/api/modules", "description": "Iterative improvement pipeline syncing engines." },
+    { "id": "sound", "name": "SoundscapeEngine", "path": "/api/soundscapes", "description": "8D/immersive audio controls with playlist rotation." }
+  ],
+  "assets": {
+    "css": ["/css/styles.css"],
+    "js": ["/js/main.js"],
+    "data": ["/data/config.json", "/data/whitepaper.json", "/data/modules.json", "/data/soundscapes.json", "/data/infinity.json"],
+    "pages": ["/index.html", "/whitepaper.html"]
+  },
+  "endpoints": {
+    "heartbeat": "/api/heartbeat",
+    "infinity": "/api/infinity"
+  }
+}

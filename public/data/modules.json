@@ -1,0 +1,57 @@
+[
+  {
+    "id": "vision",
+    "name": "VisionEngine",
+    "version": "1.0",
+    "status": "live",
+    "entry": "/api/manifest",
+    "summary": "Maintains brand visions, assets, and chromatic cues for all experiences.",
+    "capabilities": ["vision boards", "goal matrices", "component theming"],
+    "inputs": ["vision briefs", "style prompts", "media references"],
+    "outputs": ["roadmaps", "component palettes", "animation cues"]
+  },
+  {
+    "id": "context",
+    "name": "ContextEngine",
+    "version": "1.1",
+    "status": "live",
+    "entry": "/api/manifest",
+    "summary": "Captures navigation, section focus, and admin overrides to inform responses.",
+    "capabilities": ["session memory", "section heatmaps", "route awareness"],
+    "inputs": ["page state", "admin config", "heartbeat"],
+    "outputs": ["context packets", "preload hints", "admin insights"]
+  },
+  {
+    "id": "story",
+    "name": "StorytellingEngine",
+    "version": "1.1",
+    "status": "synced",
+    "entry": "/api/manifest",
+    "summary": "Weaves modular story threads with CTA highlights and whitepaper pulls.",
+    "capabilities": ["story arcs", "cta scoring", "tone balancing"],
+    "inputs": ["context packets", "whitepaper sections", "config themes"],
+    "outputs": ["section copy", "cta payloads", "summaries"]
+  },
+  {
+    "id": "infinity",
+    "name": "Infinity Loop",
+    "version": "0.9",
+    "status": "stable",
+    "entry": "/api/manifest",
+    "summary": "Supervises iterative rollouts, backups, and auto-sync staging.",
+    "capabilities": ["backups", "release channels", "sync health"],
+    "inputs": ["changelog", "heartbeat", "module states"],
+    "outputs": ["deploy scripts", "release notes", "alerts"]
+  },
+  {
+    "id": "sound",
+    "name": "SoundscapeEngine",
+    "version": "0.8",
+    "status": "live",
+    "entry": "/api/soundscapes",
+    "summary": "Routes immersive 8D audio to visitors with admin-curated playlists.",
+    "capabilities": ["8D mix", "playlist swap", "autopause"],
+    "inputs": ["section focus", "admin playlist", "visitor toggle"],
+    "outputs": ["audio stream", "now playing", "latency stats"]
+  }
+]
