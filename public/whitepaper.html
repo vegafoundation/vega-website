@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vega Whitepaper</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="whitepaper-page">
+  <main class="panel">
+    <h1>Vega Foundation Whitepaper</h1>
+    <p class="muted">Static mirror of the live blueprint. Source: /data/whitepaper.json</p>
+    <section id="whitepaper-static"></section>
+  </main>
+  <script type="module">
+    async function loadPaper() {
+      let data;
+      let source = 'api';
+      try {
+        const res = await fetch('/api/whitepaper');
+        if (!res.ok) throw new Error('whitepaper api failed');
+        data = await res.json();
+      } catch (err) {
+        console.warn('Falling back to static whitepaper', err);
+        const res = await fetch('/data/whitepaper.json');
+        data = await res.json();
+        source = 'static';
+      }
+      const container = document.getElementById('whitepaper-static');
+      container.innerHTML = `<p>${data.summary}</p><small class="muted">Source: ${source}</small>`;
+      const toc = document.createElement('ul');
+      toc.className = 'toc';
+      data.toc?.forEach(entry => {
+        const li = document.createElement('li');
+        li.textContent = entry.label;
+        toc.appendChild(li);
+      });
+      container.appendChild(toc);
+      data.sections.forEach(section => {
+        const div = document.createElement('div');
+        div.className = 'entry';
+        div.innerHTML = `<h3>${section.heading}</h3><p>${section.content}</p>`;
+        container.appendChild(div);
+      });
+    }
+    loadPaper();
+  </script>
+</body>
+</html>

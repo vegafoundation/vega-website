@@ -1,0 +1,37 @@
+{
+  "site": {
+    "title": "Vega Foundation",
+    "theme": "chrome-glass",
+    "primaryColor": "#7ef9ff",
+    "accentColor": "#e645ff"
+  },
+  "apis": {
+    "openai": { "endpoint": "https://api.openai.com", "key": "set-me" },
+    "suno": { "endpoint": "https://api.suno.ai", "key": "set-me" },
+    "croc": { "endpoint": "https://api.croc.ai", "key": "set-me" },
+    "xai": { "endpoint": "https://api.x.ai", "key": "set-me" }
+  },
+  "whitepaper": {
+    "url": "/data/whitepaper.json",
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  "soundscapes": {
+    "defaultEngine": "stellar",
+    "options": [
+      { "id": "stellar", "name": "Stellar Drift", "mode": "8D spatial" },
+      { "id": "crystal", "name": "Crystal Bloom", "mode": "live generation" },
+      { "id": "orbit", "name": "Orbit Trails", "mode": "dynamic prompts" }
+    ]
+  },
+  "engines": [
+    { "id": "vision", "name": "Vision Engine", "status": "synced", "latency": 120, "description": "Prompt-to-visual narratives with chrome-glass aesthetic." },
+    { "id": "context", "name": "Context Engine", "status": "live", "latency": 80, "description": "Memory-backed context flows for web + API." },
+    { "id": "story", "name": "Storytelling Engine", "status": "live", "latency": 95, "description": "Narrative weaving with safety filters and dynamic cues." },
+    { "id": "sound", "name": "Soundscape Engine", "status": "stable", "latency": 60, "description": "8D spatial mixing with admin-tuned layers." }
+  ],
+  "changelog": [
+    { "date": "2024-05-01T00:00:00.000Z", "summary": "Autosync bootstrap with API placeholders and admin token guard." },
+    { "date": "2024-06-01T00:00:00.000Z", "summary": "Engines unified with status and latency targets." },
+    { "date": "2024-07-01T00:00:00.000Z", "summary": "Frontend refreshed with meta timelines and live heartbeat." }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "default": "stellar",
+  "playlists": [
+    {
+      "id": "stellar",
+      "title": "Stellar Drift",
+      "engine": "Endel",
+      "mode": "8D spatial",
+      "preview": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+      "length": "6:12"
+    },
+    {
+      "id": "crystal",
+      "title": "Crystal Bloom",
+      "engine": "Suno",
+      "mode": "live generation",
+      "preview": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+      "length": "4:55"
+    },
+    {
+      "id": "orbit",
+      "title": "Orbit Trails",
+      "engine": "OpenAI",
+      "mode": "dynamic prompts",
+      "preview": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+      "length": "5:03"
+    }
+  ]
+}
